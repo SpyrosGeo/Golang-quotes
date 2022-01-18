@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-//	"strings"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
@@ -15,7 +14,6 @@ type Quote struct {
 }
 
 func main(){
-	//TODO
 	//get quote from api
 	res,err :=http.Get("https://programming-quotes-api.herokuapp.com/quotes/random")
 	if err != nil{
@@ -25,16 +23,16 @@ func main(){
 	//assign response Body to variable body
 	body,err := ioutil.ReadAll(res.Body)//response Body
 	//fmt.Println(string(body))
-// after creating the struct to represent the json data
-// create a varablie of type of the struct in this case Quote
+	// after creating the struct to represent the json data
+	// create a varablie of type of the struct in this case Quote
 	var result Quote
 	//unmarshall aka convert json string to object(type)
 	if err := json.Unmarshal(body,&result); err!=nil{
 		fmt.Println("Cannot unmarshal JSON")
 	}
 
-//	fmt.Println(PrettyPrint(result))
-//	print the quote part from the struct
+	// fmt.Println(PrettyPrint(result))
+	// print the quote part from the struct
 	fmt.Println(result.En)
 
 
