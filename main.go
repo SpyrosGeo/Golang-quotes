@@ -33,7 +33,7 @@ func main(){
 
 	// fmt.Println(PrettyPrint(result))
 	// print the quote part from the struct
-	fmt.Println(result.En)
+	fmt.Printf("%s-%s",result.En,result.Author)
 
 
 }
