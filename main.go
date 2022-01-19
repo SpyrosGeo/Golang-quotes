@@ -12,7 +12,7 @@ type Quote struct {
 	Author string `json:"author"`
 	En     string `json:"en"`
 }
-
+//test
 func main() {
 	//get quote from api
 	res, err := http.Get("https://programming-quotes-api.herokuapp.com/quotes/random")
